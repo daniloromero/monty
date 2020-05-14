@@ -53,7 +53,7 @@ void pint(stack_t **stack, unsigned int line_number)
 {
 	stack_t *copy = *stack;
 
-	if (stack == NULL)
+	if (stack == NULL || *stack == NULL)
 	{
 		dprintf(2, "L%d: can't pint, stack empty\n", line_number);
 		args.error = -1;
@@ -71,7 +71,7 @@ void pop(stack_t **stack, unsigned int line_number)
 {
 	stack_t *copy = *stack;
 
-	if (stack == NULL)
+	if (stack == NULL || *stack == NULL)
 	{
 		dprintf(2, "L%d: can't pop an empty stack\n", line_number);
 		args.error = -1;
