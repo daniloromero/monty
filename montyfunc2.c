@@ -8,7 +8,7 @@
 void add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *copy;
-	unsigned int numero = (*stack)->n;
+	int numero = (*stack)->n;
 
 	if (list_len(stack) < 2)
 	{
@@ -16,9 +16,9 @@ void add(stack_t **stack, unsigned int line_number)
 		args.error = -1;
 		return;
 	}
+	pop(stack, args.counter);
 	copy = *stack;
 	copy->n = numero + copy->n;
-	pop(stack, args.counter);
 }
 /**
  * nop - does nothing
