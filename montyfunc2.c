@@ -7,7 +7,7 @@
  */
 void add(stack_t **stack, unsigned int line_number)
 {
-	stack_t *copy;
+	stack_t *copy = *stack;
 
 	if (!*stack || !(*stack)->next)
 	{
