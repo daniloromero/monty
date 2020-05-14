@@ -10,7 +10,7 @@ void add(stack_t **stack, unsigned int line_number)
 	stack_t *copy;
 	int numero = (*stack)->n;
 
-	if (list_len(stack) < 2)
+	if (!*stack || !(*stack)->next)
 	{
 		dprintf(2, "L%d: can't add, stack too short\n", line_number);
 		args.error = -1;

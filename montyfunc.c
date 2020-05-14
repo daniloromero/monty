@@ -78,7 +78,8 @@ void pop(stack_t **stack, unsigned int line_number)
 		return;
 	}
 	*stack = copy->next;
-	(*stack)->prev = NULL;
+	if (copy->next)
+		(*stack)->prev = NULL;
 	free(copy);
 }
 /**
