@@ -18,7 +18,9 @@ char **tokenfunc(char *line)
 
 	if (matrix == NULL)
 	{
-		printf("Error: malloc failed\n");
+		dprintf(2, "Error: malloc failed\n");
+		free(line);
+		fclose(args.monty_file);
 		exit(EXIT_FAILURE);
 	}
 	for (i = 0; token != NULL; i++)
@@ -33,7 +35,7 @@ char **tokenfunc(char *line)
  * funchandler - function dictionary selector
  * Return: 0 on success 1 for failure
  */
-int funchandler(void)
+void funchandler(void)
 {
 	instruction_t key[] = {{"push", push},
 			       {"pint", pint},
@@ -55,8 +57,8 @@ int funchandler(void)
 	}
 	if (i == 7)
 	{
-		printf("L%d: unknown instruction %s\n", args.counter, args.matrix[0]);
-		exit(EXIT_FAILURE);
+		dprintf(2, "L%d: unknown instruction %s\n", args.counter, args.matrix[0]);
+		args.error = -1;
+		return;
 	}
-	return (0);
 }

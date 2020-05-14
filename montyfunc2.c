@@ -12,8 +12,9 @@ void add(stack_t **stack, unsigned int line_number)
 
 	if (list_len(stack) < 2)
 	{
-		printf("L%d: can't add, stack too short\n", line_number);
-		exit(EXIT_FAILURE);
+		dprintf(2, "L%d: can't add, stack too short\n", line_number);
+		args.error = -1;
+		return;
 	}
 	pop(stack, args.counter);
 	copy = *stack;

@@ -47,13 +47,13 @@ typedef struct auxiliar
 	FILE *monty_file;
 	stack_t *head;
 	char **matrix;
-	char coman[20];
+	int error;
 	int counter;
 } linehead;
 extern linehead args;
 char **tokenfunc(char *line);
 void matrixfree(void);
-int funchandler(void);
+void funchandler(void);
 void push(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
@@ -61,7 +61,7 @@ void swap(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void add(stack_t **stack, unsigned int line_number);
 void nop(stack_t **stack, unsigned int line_number);
-stack_t *addnode(stack_t **stack, unsigned int line_number);
+void addnode(stack_t **stack, unsigned int line_number);
 void free_dlistint(stack_t *head);
 int list_len(stack_t **stack);
 #endif
