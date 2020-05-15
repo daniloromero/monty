@@ -64,4 +64,9 @@ void nop(stack_t **stack, unsigned int line_number);
 void addnode(stack_t **stack, unsigned int line_number);
 void free_dlistint(stack_t *head);
 int list_len(stack_t **stack);
+void sub(stack_t **stack, unsigned int line_number);
+void divv(stack_t **stack, unsigned int line_number);
+void mul(stack_t **stack, unsigned int line_number);
+void mod(stack_t **stack, unsigned int line_number);
+
 #endif

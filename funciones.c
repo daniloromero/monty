@@ -44,6 +44,10 @@ void funchandler(void)
 			       {"add", add},
 			       {"nop", nop},
 			       {"pall", pall},
+			       {"sub", sub},
+			       {"div", divv},
+			       {"mul", mul},
+			       {"mod", mod},
 			       {NULL, NULL}};
 	int i = 0;
 
@@ -55,7 +59,7 @@ void funchandler(void)
 			break;
 		}
 	}
-	if (i == 7)
+	if (i == 11)
 	{
 		dprintf(2, "L%d: unknown instruction %s\n", args.counter, args.matrix[0]);
 		args.error = -1;
