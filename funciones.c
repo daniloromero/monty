@@ -49,6 +49,7 @@ void funchandler(void)
 			       {"mul", mul},
 			       {"mod", mod},
 			       {"pchar", pchar},
+			       {"pstr", pstr},
 			       {NULL, NULL}};
 	int i = 0;
 
@@ -60,7 +61,7 @@ void funchandler(void)
 			break;
 		}
 	}
-	if (i == 12)
+	if (i == 13)
 	{
 		dprintf(2, "L%d: unknown instruction %s\n", args.counter, args.matrix[0]);
 		args.error = -1;
