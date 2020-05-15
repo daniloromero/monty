@@ -33,8 +33,8 @@ int main(int argc, char *argv[])
 	{
 		args.matrix = NULL;
 		lines = getline(&line, &line_size, args.monty_file);
-		if (lines <= 0)
-			break;
+		if (lines <= 0 || strcmp(line, "\n") == 0)
+			continue;
 		args.counter += 1;
 		args.matrix = tokenfunc(line);
 		funchandler();
