@@ -70,6 +70,7 @@ void divv(stack_t **stack, unsigned int line_number);
 void mul(stack_t **stack, unsigned int line_number);
 void mod(stack_t **stack, unsigned int line_number);
 int _isdigit(char *arguments);
+void pchar(stack_t **stack, unsigned int line_number);
 
 
 #endif

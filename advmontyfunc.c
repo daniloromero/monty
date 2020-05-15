@@ -89,3 +89,31 @@ void mod(stack_t **stack, unsigned int line_number)
 	copy->next->n = copy->next->n % copy->n;
 	pop(stack, args.counter);
 }
+/**
+ * pchar - prints the char at the top of the stack, followed by a new line.
+ * element of the stack
+ * by the top element of the stack
+ * @stack: head of the list
+ * @line_number: monty file line number
+ * Return: no return
+ */
+void pchar(stack_t **stack, unsigned int line_number)
+{
+	stack_t *copy = *stack;
+
+
+	if (!stack || !*stack)
+	{
+		dprintf(2, "L%d: can't pchar, stack empty\n", line_number);
+		args.error = -1;
+		return;
+	}
+	if ((copy->n > 64 && copy->n < 91) || (copy->n > 96 && copy->n < 123))
+		printf("%c\n", copy->n);
+	else
+	{
+		dprintf(2, "L%d: can't pchar, value out of range\n", line_number);
+		args.error = -1;
+		return;
+	}
+}
