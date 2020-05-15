@@ -108,12 +108,12 @@ void pchar(stack_t **stack, unsigned int line_number)
 		args.error = -1;
 		return;
 	}
-	if (copy->n > 0 && copy->n < 127)
-		printf("%c\n", copy->n);
-	else
+	if (copy->n < 0 || copy->n > 127)
 	{
 		dprintf(2, "L%d: can't pchar, value out of range\n", line_number);
 		args.error = -1;
 		return;
 	}
+	else
+		printf("%c\n", copy->n);
 }
