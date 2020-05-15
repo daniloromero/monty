@@ -108,7 +108,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 		args.error = -1;
 		return;
 	}
-	if (copy->n > 0 || copy->n < 127)
+	if (copy->n > 0 && copy->n < 127)
 		printf("%c\n", copy->n);
 	else
 	{
