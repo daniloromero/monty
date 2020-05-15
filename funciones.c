@@ -62,3 +62,19 @@ void funchandler(void)
 		return;
 	}
 }
+/**
+ * _isdigit - verificate if a string contains a digit
+ * @arguments:check if is digit
+ * Return:a integer
+ */
+int _isdigit(char *arguments)
+{
+	int count;
+
+	for (count = 0; arguments[count]; count++)
+	{
+		if (isdigit(arguments[count]) == 0)
+			return (1);
+	}
+	return (0);
+}
