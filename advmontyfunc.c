@@ -19,7 +19,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	pop(stack, args.counter);
 }
 /**
- * div - divides the 2nd element of the stack by the top element of the stack
+ * divv - divides the 2nd element of the stack by the top element of the stack
  * @stack: head of the list
  * @line_number: monty file line number
  * Return: no return
@@ -31,6 +31,12 @@ void divv(stack_t **stack, unsigned int line_number)
 	if (!*stack || !(*stack)->next)
 	{
 		dprintf(2, "L%d: can't div, stack too short\n", line_number);
+		args.error = -1;
+		return;
+	}
+	if (copy->n == 0)
+	{
+		dprintf(2, "L%d: can't div, division by zero\n", line_number);
 		args.error = -1;
 		return;
 	}
@@ -57,7 +63,8 @@ void mul(stack_t **stack, unsigned int line_number)
 	pop(stack, args.counter);
 }
 /**
- * mod - computes the rest of the division of the second top element of the stack
+ * mod - computes the rest of the division of the second top
+ * element of the stack
  * by the top element of the stack
  * @stack: head of the list
  * @line_number: monty file line number
@@ -70,6 +77,12 @@ void mod(stack_t **stack, unsigned int line_number)
 	if (!*stack || !(*stack)->next)
 	{
 		dprintf(2, "L%d: can't mod, stack too short\n", line_number);
+		args.error = -1;
+		return;
+	}
+	if (copy->n == 0)
+	{
+		dprintf(2, "L%d: can't mod, division by zero\n", line_number);
 		args.error = -1;
 		return;
 	}
