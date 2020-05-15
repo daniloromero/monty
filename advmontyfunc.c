@@ -36,7 +36,7 @@ void divv(stack_t **stack, unsigned int line_number)
 	}
 	if (copy->n == 0)
 	{
-		dprintf(2, "L%d: can't div, division by zero\n", line_number);
+		dprintf(2, "L%d: division by zero\n", line_number);
 		args.error = -1;
 		return;
 	}
@@ -82,7 +82,7 @@ void mod(stack_t **stack, unsigned int line_number)
 	}
 	if (copy->n == 0)
 	{
-		dprintf(2, "L%d: can't mod, division by zero\n", line_number);
+		dprintf(2, "L%d: division by zero\n", line_number);
 		args.error = -1;
 		return;
 	}
