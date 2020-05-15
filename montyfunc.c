@@ -20,7 +20,7 @@ void addnode(stack_t **stack, unsigned int line_number)
 	stack_t *copy = *stack;
 	stack_t *new_node;
 
-	if (stack == NULL || args.matrix[1] == NULL || !atoi(args.matrix[1]))
+	if (stack == NULL || args.matrix[1] == NULL || _isdigit(args.matrix[1]))
 	{
 		dprintf(2, "L%d: usage: push integer\n", line_number);
 		args.error = -1;
